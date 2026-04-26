@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>ALEXIA MELUSINE | FALE COMIGO</title>
 
+<!-- SEO / OG -->
 <meta name="description" content="Conecte-se comigo agora. Deixe sua mensagem, seu axé, suas dúvidas e curiosidades. Você me encontra direto no WhatsApp e Telegram — é só clicar.">
 
 <meta property="og:type" content="website">
@@ -23,70 +24,108 @@
 <meta name="theme-color" content="#030303">
 
 <style>
+
+/* -------------------------------
+   MOBILE FIRST — BASE
+-------------------------------- */
+
 body {
     margin: 0;
-    padding: 0;
-    background: url('https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Ale%20Red%20(2).jpg') center/cover no-repeat fixed;
+    padding: 16px;
+    background: url('https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Ale%20Red%20(2).jpg')
+        center/cover no-repeat;
     font-family: "Montserrat", sans-serif;
     color: #fff;
 }
 
+/* Ajuste REAL de mobile — remove folgas */
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
 .container {
     width: 100%;
-    max-width: 480px;
-    margin: 40px auto;
     padding: 20px;
+    margin: 0 auto;
     background: rgba(255, 0, 80, 0.10);
     backdrop-filter: blur(15px);
     border-radius: 18px;
     border: 1px solid rgba(255, 0, 80, 0.25);
     text-align: center;
+    box-shadow: 0 0 18px rgba(255, 0, 80, 0.25);
 }
 
+/* Banner Mobile */
 .banner {
     width: 100%;
     border-radius: 14px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 25px rgba(255, 20, 90, 0.5);
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(255, 20, 90, 0.45);
 }
 
+/* Títulos Mobile */
 h1 {
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
-    margin: 0;
-    letter-spacing: 1px;
+    margin: 0 0 12px 0;
     text-shadow: 0 0 12px #ff0055;
 }
 
 p.sub {
+    font-size: 15px;
     opacity: .85;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
+/* Botões otimizados para polegar */
 .btn {
     width: 100%;
-    padding: 16px;
-    border-radius: 12px;
-    margin: 10px 0;
+    padding: 18px;
+    border-radius: 14px;
+    margin: 12px 0;
     background: linear-gradient(90deg, #ff004c, #d4003d);
     color: #fff;
     text-decoration: none;
     display: block;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 17px;
     border: none;
     cursor: pointer;
     box-shadow: 0 0 12px rgba(255, 0, 80, .45);
-    transition: .2s;
+    transition: .22s ease;
 }
 
 .btn:hover {
     transform: scale(1.04);
-    box-shadow: 0 0 18px rgba(255, 0, 80, .75);
+    box-shadow: 0 0 18px rgba(255, 0, 80, .85);
 }
+
+/* -------------------------------
+   DESKTOP ENHANCEMENT
+-------------------------------- */
+
+@media (min-width: 700px) {
+
+    body {
+        background-attachment: fixed;
+        padding-top: 40px;
+    }
+
+    .container {
+        max-width: 480px;
+        padding: 28px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}
+
 </style>
 
 <script>
+/* Base64 seguro — NÃO EXIBE NÚMERO */
 const encoded = "bWV1IHRlbGVncmFtIEBNYXJjYWRlUG9tYmFnaXJhCm1ldSB3aGF0c2FwcCA1NSAxMSA5IDg4NDMgNDA3MA==";
 
 function getData() {
@@ -105,8 +144,6 @@ function openWhatsApp() {
     const { phone } = getData();
     if (phone) {
         window.open("https://wa.me/" + phone, "_blank");
-    } else {
-        alert("Erro ao abrir WhatsApp");
     }
 }
 
@@ -114,8 +151,6 @@ function openTelegram() {
     const { telegram } = getData();
     if (telegram) {
         window.open("https://t.me/" + telegram, "_blank");
-    } else {
-        alert("Erro ao abrir Telegram");
     }
 }
 </script>
@@ -127,11 +162,11 @@ function openTelegram() {
 <div class="container">
     <img class="banner" src="https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Ale%20Ultra%20(1).png">
 
-    <h1> ☆ FALE COMIGO ☆</h1>
-    <p class="sub"> ♆ Deixe sua mensagem, sua dúvida, sua crítica e seu axé</p>
+    <h1>☆ FALE COMIGO ☆</h1>
+    <p class="sub">♆ Deixe sua mensagem, sua dúvida, sua crítica e seu axé</p>
 
-    <button class="btn" onclick="openWhatsApp()"> ➭ WHATSAPP</button>
-    <button class="btn" onclick="openTelegram()"> ➭ TELEGRAM</button>
+    <button class="btn" onclick="openWhatsApp()">➭ WHATSAPP</button>
+    <button class="btn" onclick="openTelegram()">➭ TELEGRAM</button>
 </div>
 
 </body>
